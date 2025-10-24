@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="chat-container">
+    <div class="chat-header">
+        <h2>Chat Room</h2>
+        <div class="user-info">
+            User: <strong>{{ username }}</strong>
+            <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
+        </div>
+    </div>
+    
+    <div class="messages-container" id="messages">
+        {% for message in messages %}
+        <div class="message {% if message['username'] == username %}own{% else %}other{% endif %}">
+            {% if message['username'] != username %}
+            <span class="username">{{ message['username'] }}</span>
+            {% endif %}
+            <span class="message-text">{{ message['message'] }}</span>
+            <span class="timestamp">{{ message['created_at'][11:16] }}</span>
+        </div>
+        {% endfor %}
+        {% if not messages %}
+        <div class="no-messages">No messages yet. Start the conversation!</div>
+        {% endif %}
+    </div>
+    
+    <form method="POST" class="message-form">
+        <input type="text" name="message" placeholder="Type your message..." required class="input-field">
+        <button type="submit" class="btn">Send</button>
+    </form>
+</div>
+
+<script>
+    // Auto-scroll to bottom of messages
+    window.onload = function() {
+        const messagesContainer = document.getElementById('messages');
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+</script>
+{% endblock %}

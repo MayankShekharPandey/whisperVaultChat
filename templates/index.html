@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="center-content">
+    <h2 style="font-size: 1.6em; margin-bottom: 15px; color: #1c1e21;">Welcome to whisperVaultChat</h2>
+    <p class="welcome-text">Simple and clean messaging</p>
+    
+    <div class="button-group">
+        <a href="{{ url_for('login') }}" class="btn">Login</a>
+        <a href="{{ url_for('register') }}" class="btn secondary">Register</a>
+    </div>
+</div>
+{% endblock %}

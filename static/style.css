@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    line-height: 1.4;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.2em;
+    color: #1c1e21;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 1.1em;
+    color: #65676b;
+    margin-bottom: 25px;
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    background: #1877f2;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.btn:hover {
+    background: #166fe5;
+}
+
+.btn.secondary {
+    background: #42b72a;
+}
+
+.btn.secondary:hover {
+    background: #36a420;
+}
+
+.btn.logout {
+    background: #65676b;
+    font-size: 0.85em;
+    padding: 6px 12px;
+}
+
+.btn.logout:hover {
+    background: #5a5c5f;
+}
+
+.input-field {
+    padding: 12px 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    margin: 8px 0;
+    width: 300px;
+    max-width: 100%;
+    font-size: 0.95em;
+    background: #f5f6f7;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #1877f2;
+    background: white;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.auth-links {
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    background: #ffe6e6;
+    color: #d93025;
+    padding: 10px 16px;
+    margin: 12px 0;
+    border-radius: 6px;
+    max-width: 300px;
+    font-size: 0.9em;
+    border: 1px solid #ffcccc;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.chat-header {
+    background: #1877f2;
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9em;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f0f2f5;
+}
+
+.message {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    border-radius: 18px;
+    max-width: 70%;
+    position: relative;
+}
+
+.message.own {
+    background: #1877f2;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 6px;
+}
+
+.message.other {
+    background: white;
+    margin-right: auto;
+    border-bottom-left-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.username {
+    font-weight: 600;
+    font-size: 0.8em;
+    color: #1877f2;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.message.own .username {
+    color: #e3f2fd;
+}
+
+.message-text {
+    font-size: 0.95em;
+    line-height: 1.3;
+}
+
+.timestamp {
+    font-size: 0.7em;
+    opacity: 0.8;
+    text-align: right;
+    margin-top: 4px;
+    display: block;
+}
+
+.no-messages {
+    text-align: center;
+    color: #65676b;
+    font-style: italic;
+    padding: 40px 20px;
+}
+
+.message-form {
+    display: flex;
+    gap: 10px;
+    padding: 16px 20px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+}
+
+.message-form .input-field {
+    flex: 1;
+    margin: 0;
+    background: white;
+}
+
+.message-form .btn {
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+.messages-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background: #1877f2;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .chat-header {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .message {
+        max-width: 85%;
+    }
+    
+    .message-form {
+        padding: 12px 15px;
+    }
+    
+    .input-field {
+        width: 280px;
+    }
+}
